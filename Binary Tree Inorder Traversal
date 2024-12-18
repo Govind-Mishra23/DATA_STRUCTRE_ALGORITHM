@@ -1,0 +1,15 @@
+class Solution {
+        List<Integer> newList = new ArrayList<>() ; 
+    public List<Integer> inorderTraversal(TreeNode root) {
+        if(root != null){
+            inorderTraversal(root.left); 
+             newList.add(root.val); 
+            inorderTraversal(root.right); 
+        }else {
+            return newList ;
+        }
+        return newList ;
+    }
+}
+
+// InorderTraversal is basically LDR type method in which first recursively move to left of tree and then add data and move right. This process will run if and only if root is not equal to null.
