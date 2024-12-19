@@ -9,25 +9,9 @@ class Solution {
         return false;
     }
 }
-
-// This code checks if a given non-negative integer 
-// 𝑐
-// c can be expressed as the sum of two perfect squares, 
-// 𝑎
-// 2
-// +
-// 𝑏
-// 2
-// =
-// 𝑐
-// a 
-// 2
-//  +b 
-// 2
-//  =c. It uses two pointers: left starts at 0, and right starts at the largest integer whose square is less than or equal to 
-// 𝑐
-// c (calculated using Math.sqrt(c)). Inside a loop, it checks the sum of the squares of left and right. If the sum equals 
-// 𝑐
-// c, it returns true. If the sum is too large, it decreases right to reduce the sum; if it's too small, it increases left to make the sum larger. If no valid pair is found by the time the pointers cross, it returns false, meaning 
-// 𝑐
-// c cannot be expressed as the sum of two squares.
+This code checks if a given non-negative integer c can be expressed as the sum of two perfect squares, a^2 + b^2 = c.
+It uses two pointers: left starts at 0, and right starts at the largest integer whose square is less than or equal to c 
+(calculated using Math.sqrt(c)). Inside a loop, it checks the sum of the squares of left and right. If the sum equals c, 
+it returns true. If the sum is too large, it decreases right to reduce the sum; if it's too small, it increases left to 
+make the sum larger. If no valid pair is found by the time the pointers cross, it returns false, meaning c cannot be expressed 
+as the sum of two squares.
