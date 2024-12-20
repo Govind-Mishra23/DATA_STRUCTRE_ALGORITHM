@@ -1,0 +1,23 @@
+
+class Solution {
+    
+    public ListNode oddEvenList(ListNode head) {
+        if(head == null || head.next==null){
+            return head ;
+        } 
+        ListNode s = head;
+        ListNode f = head.next ;
+        ListNode temp = head.next ;
+         while(f != null && f.next != null){
+            s.next = f.next ; 
+            s = s.next ; 
+            f.next = s.next ; 
+            f = f.next ;
+         }
+         s.next = temp ;
+         return head;
+
+    }
+}
+
+The oddEvenList method in the Solution class reorders a singly linked list such that all nodes at odd indices are grouped together followed by the nodes at even indices. It first checks if the list is empty or has only one node, in which case it returns the head. It then uses two pointers, s for odd-indexed nodes and f for even-indexed nodes, to traverse and rearrange the list. The temp pointer stores the head of the even-indexed nodes. The method iterates through the list, adjusting the next pointers of s and f to group odd and even nodes separately. Finally, it connects the end of the odd-indexed nodes to the head of the even-indexed nodes and returns the modified list. The time complexity of this method is O(n), where n is the number of nodes in the list. The space complexity is O(1) as it uses only a constant amount of extra space for pointers.
