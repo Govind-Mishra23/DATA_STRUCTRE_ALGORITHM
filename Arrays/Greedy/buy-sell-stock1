@@ -1,0 +1,19 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+       if(prices.length < 2){
+        return 0 ; 
+       } 
+       int min = Integer.MAX_VALUE; 
+       int max = 0 ; 
+       for(int price : prices){
+            if(price < min){
+                min = price ;
+            }else {
+                max = Math.max(max, price - min) ; 
+            }
+       }
+       return max ;
+    }
+}
+
+The approach to solve the problem of finding the maximum profit from buying and selling a stock involves initializing two variables: min to store the minimum price encountered so far, set to Integer.MAX_VALUE initially, and max to store the maximum profit, set to 0 initially. The algorithm then iterates through each price in the array. If the current price is less than min, it updates min to the current price. Otherwise, it calculates the profit by subtracting min from the current price and updates max if this profit is greater than the current max. After iterating through all prices, max will contain the maximum profit that can be achieved. This approach ensures that the array is traversed only once, resulting in a time complexity of O(n).
