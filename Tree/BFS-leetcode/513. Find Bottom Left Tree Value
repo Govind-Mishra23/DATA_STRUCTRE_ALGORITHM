@@ -1,0 +1,28 @@
+class Solution {
+    public int findBottomLeftValue(TreeNode root) {
+        List<Integer> list = new ArrayList<>() ; 
+        if(root.left == null && root.right == null){
+            return root.val ; 
+        }
+        Queue <TreeNode> queue = new LinkedList<>() ; 
+        queue.offer(root) ; 
+        while(!queue.isEmpty()){
+            int levelSize = queue.size() ; 
+            List<Integer> currList = new ArrayList<> () ; 
+            for(int i = 0 ; i<levelSize; i++){
+                TreeNode currNode = queue.poll(); 
+                currList.add(currNode.val); 
+                if(currNode.left != null){
+                    queue.offer(currNode.left); 
+                }
+                 if(currNode.right != null){
+                    queue.offer(currNode.right); 
+                }
+            }
+            list.add(currList.getFirst()); 
+        }
+        return list.getLast() ; 
+    }
+}
+
+The provided code finds the bottom-left value in a binary tree using a breadth-first search (BFS) approach. It initializes a queue and adds the root node to it. The algorithm then processes each level of the tree one by one. For each level, it determines the number of nodes, iterates through them, and adds their values to a list. It also adds the left and right children of each node to the queue for processing in the next level. After processing all levels, the algorithm retrieves the first value from the list of the last level, which represents the bottom-left value of the tree, and returns it. This ensures that the leftmost value at the deepest level of the tree is found and returned.
