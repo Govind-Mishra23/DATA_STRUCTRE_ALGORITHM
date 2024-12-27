@@ -1,0 +1,25 @@
+class Solution {
+    public ListNode partition(ListNode head, int x) {
+        ListNode greaterHead = new ListNode (0) ;
+        ListNode lowerHead = new ListNode (0) ;
+
+        ListNode greater = greaterHead ;
+        ListNode lower = lowerHead ;
+
+        while(head != null){
+            if(head.val < x){
+                lower.next = head ;
+                lower = lower.next ;
+            }else {
+                greater.next = head ;
+                greater = greater.next ;
+            }
+            head = head.next ;
+        }
+        greater.next = null ; 
+        lower.next = greaterHead.next ; 
+        return lowerHead.next ;
+
+    }
+}
+// The code snippet above partitions a linked list based on a given value x. It creates two dummy nodes, greaterHead and lowerHead, to store nodes with values greater than and less than x, respectively. It then iterates through the original linked list, moving nodes to the appropriate list based on their values. Finally, it connects the two lists and returns the resulting partitioned linked list. This approach ensures that the relative order of nodes within each partition is preserved while partitioning the linked list based on the given value x.
