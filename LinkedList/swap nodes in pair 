@@ -1,0 +1,23 @@
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        ListNode dummyhead  = new ListNode (0) ;
+        dummyhead.next = head ;
+        ListNode prev = dummyhead ; 
+        while(prev.next != null && prev.next.next != null){
+            ListNode f = prev.next ;
+            ListNode s = f.next ;
+
+             f.next = s.next ; 
+             s.next = f ; 
+             prev.next = s ;
+
+             prev = f ; 
+        }
+        return dummyhead.next ;
+    }
+}
+
+// create a dummy head node to handle edge cases and initialize a pointer prev to the dummy head
+
+
+// The code snippet above swaps nodes in pairs in a linked list. It creates a dummy head node to handle edge cases and initializes a pointer prev to the dummy head. It then iterates through the linked list, swapping pairs of nodes by adjusting their next pointers. After swapping, it updates the prev pointer to the next pair of nodes. Finally, it returns the modified linked list with nodes swapped in pairs. This approach ensures that nodes are swapped in pairs while maintaining the relative order of nodes within each pair.
