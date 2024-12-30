@@ -1,0 +1,19 @@
+class Solution {
+    
+    public void deleteNode(ListNode node) {
+         ListNode  p = node ;
+         ListNode q = node.next ;
+         ListNode prev = null ; 
+         while(p!=null && q!=null){
+            int temp = p.val; 
+            p.val = q.val ; 
+            q.val= temp ;
+            prev = p ;  
+            p = p.next ;
+            q = q.next ;
+         }
+         prev.next = null ; 
+
+    }
+}
+// The code snippet above defines a method deleteNode that deletes a node in a linked list given only access to that node. It initializes two pointers, p and q, to the given node and its next node, respectively. It also initializes a pointer prev to keep track of the previous node. The method then iterates through the linked list, swapping the values of nodes p and q until q reaches the end of the list. After swapping, it updates the prev pointer to the current node p. Finally, it sets the next pointer of the previous node to null, effectively deleting the last node in the list. This approach allows for the deletion of a node in a linked list without direct access to the previous node, ensuring that the list remains connected and maintains its structure.
