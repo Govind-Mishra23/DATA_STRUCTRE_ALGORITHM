@@ -1,0 +1,22 @@
+class Solution {
+    public String removeStars(String s) {
+       int n = s.length() ; 
+       int i = 0 ;
+       StringBuilder sb = new StringBuilder();
+       int k = -1 ; 
+       while(i<n){
+         if(s.charAt(i) != '*'){
+            sb.append(s.charAt(i));
+            k++ ; 
+         }else{  
+            sb.deleteCharAt(k);
+            k-- ; 
+         }
+         i++ ;
+       } 
+       String str = sb.toString(); 
+       return str;
+    }
+}
+
+// The code snippet above defines a method removeStars that removes all occurrences of the character '*' from a given string s. It initializes variables n to the length of the string, i to iterate through the string, and a StringBuilder sb to store the resulting string. It also initializes a variable k to keep track of the current index in the StringBuilder. The method then iterates through the string, appending non-'*' characters to the StringBuilder and deleting the last character if the current character is '*'. It updates the index k accordingly. Finally, it converts the StringBuilder to a string and returns the result. This approach ensures that all '*' characters are removed from the input string, maintaining the order of the remaining characters.
