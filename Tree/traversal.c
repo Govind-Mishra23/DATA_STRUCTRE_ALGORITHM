@@ -11,7 +11,7 @@ struct TreeNode* createNode(int val) {
     struct TreeNode* makeNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));
     makeNode->val = val;
     makeNode->left = NULL;
-     makeNode->right = NULL;
+    makeNode->right = NULL;
     return  makeNode;
 }
 
@@ -42,8 +42,6 @@ void inorderTraversal(struct TreeNode* root) {
     inorderTraversal(root->right);  
 }
 
-
-
 int main() {
     struct TreeNode* root = createNode(1);
     root->left = createNode(2);
@@ -52,7 +50,7 @@ int main() {
     root->left->right = createNode(5);
 
     preorderTraversal(root);
-    printf("\n");
+    printf("\n"); 
     postorderTraversal(root);
     printf("\n");
     inorderTraversal(root);
