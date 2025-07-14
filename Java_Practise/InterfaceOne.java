@@ -18,6 +18,7 @@ class inhertiPropertyEx implements A, B {
      public void printB (){
         System.out.println(" i am b");
     }
+    // hello
 
 }
 public class InterfaceOne {
